@@ -42,7 +42,7 @@ const Tanks = () => {
   }
 
   const imagePhoto = () => {
-    switch (colors2) {
+    switch (colors) {  // Ensure the correct variable is used
       case 'lightred':
         return Tank22
       case 'grey':
@@ -55,6 +55,7 @@ const Tanks = () => {
         return Tank11
     }
   }
+
   const imagePhoto2 = () => {
     switch (colors2) {
       case 'grey':
