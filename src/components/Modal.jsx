@@ -6,6 +6,8 @@ import ModalImg4 from '../../public/ModalImg4.png'
 import ModalImg5 from '../../public/ModalImg5.png'
 import ModalImg6 from '../../public/ModalImg6.png'
 import { IoMdClose } from "react-icons/io";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Modal = ({ setModal }) => {
   const modalRef = useRef(null)
@@ -21,14 +23,14 @@ const Modal = ({ setModal }) => {
     >
       <div className="">
         <div className="flex md:mx-0 mx-3 flex-col gap-2">
-          <img className='md:w-[1076px] w-full md:h-[500px] h-[194px]' src={ModalImg1} alt="" />
+          <LazyLoadImage effect='blur' className='md:w-[1076px] w-full md:h-[500px] h-[194px]' src={ModalImg1} alt="" />
 
-          <div className="flex gap-2">
-            <img className='md:w-full h-[100px]' src={ModalImg2} alt="" />
-            <img className='md:w-full h-[100px]' src={ModalImg3} alt="" />
-            <img className='md:w-full h-[100px]' src={ModalImg4} alt="" />
-            <img className='md:w-full h-[100px]' src={ModalImg5} alt="" />
-            <img className='md:w-full h-[100px]' src={ModalImg6} alt="" />
+          <div className="flex gap-2 items-center justify-between">
+            <LazyLoadImage width={"100%"} effect='blur' className='md:w-full h-[100px]' src={ModalImg2} alt="" />
+            <LazyLoadImage width={"100%"} effect='blur' className='md:w-full h-[100px]' src={ModalImg3} alt="" />
+            <LazyLoadImage width={"100%"} effect='blur' className='md:w-full h-[100px]' src={ModalImg4} alt="" />
+            <LazyLoadImage width={"100%"} effect='blur' className='md:w-full h-[100px]' src={ModalImg5} alt="" />
+            <LazyLoadImage width={"100%"} effect='blur' className='md:w-full h-[100px]' src={ModalImg6} alt="" />
           </div>
         </div>
       </div>

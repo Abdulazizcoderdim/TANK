@@ -11,12 +11,15 @@ import Award2 from '../../public/award2.png'
 import Award3 from '../../public/award3.png'
 import Tank1 from '../../public/Tank1.png'
 import Tank2 from '../../public/Tank2.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Banner = () => {
   return (
     <div>
       <div className="relative">
-        <img
+        <LazyLoadImage
+          effect='blur'
           src={BannerPhoto}
           className="w-full md:min-h-[700px] object-center min-h-[300px]"
           alt=""

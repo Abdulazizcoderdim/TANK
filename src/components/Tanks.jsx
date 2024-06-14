@@ -21,6 +21,8 @@ import Gray22 from '../../public/Gray2-2.png'
 import Gray23 from '../../public/Gray2-3.png'
 import Gray24 from '../../public/Gray2-4.png'
 import Modal from './Modal'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Tanks = () => {
   const [colors, setColors] = useState(
@@ -42,7 +44,9 @@ const Tanks = () => {
   }
 
   const imagePhoto = () => {
-    switch (colors) {  // Ensure the correct variable is used
+    switch (
+      colors // Ensure the correct variable is used
+    ) {
       case 'lightred':
         return Tank22
       case 'grey':
@@ -105,7 +109,18 @@ const Tanks = () => {
             <div className="">
               <div className="flex  md:flex-row flex-col items-center gap-4">
                 <div className="relative">
-                  <img className="object-fill" src={imagePhoto()} alt="" />
+                  <LazyLoadImage
+                    alt={'photo'}
+                    effect="blur"
+                    src={imagePhoto()}
+                    className="object-fill"
+                  />
+                  {/* <img
+                    loading="lazy"
+                    className="object-fill"
+                    src={imagePhoto()}
+                    alt=""
+                  /> */}
                   <div className="absolute top-5 text-center right-12 text-black bg-[#FF9549] rounded-md p-2 md:text-[16px] text-[12px] font-medium md:leading-5 leading-3 rotate-[15deg]">
                     Осталось <br /> 5 автомобилей <br /> по спец цене
                   </div>
@@ -172,27 +187,32 @@ const Tanks = () => {
             </div>
           </div>
           <div className="flex gap-5 items-center overflow-x-hidden">
-            <img
+            <LazyLoadImage
+               effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray1}
               alt=""
             />
-            <img
+            <LazyLoadImage
+               effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray2}
               alt=""
             />
-            <img
+            <LazyLoadImage
+               effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray3}
               alt=""
             />
-            <img
+            <LazyLoadImage
+               effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray4}
               alt=""
             />
-            <img
+            <LazyLoadImage
+               effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray5}
               alt=""
@@ -232,12 +252,20 @@ const Tanks = () => {
                   </span>
                 </div>
                 <div className="relative">
-                  <img
+                  <LazyLoadImage
+                    alt={'photo'}
+                    effect="blur"
+                    src={imagePhoto2()}
+                    className="object-fill cursor-pointer"
+                    onClick={() => setModal(true)}
+
+                  />
+                  {/* <img
                     onClick={() => setModal(true)}
                     className="object-fill"
                     src={imagePhoto2()}
                     alt=""
-                  />
+                  /> */}
                   <div className="absolute top-5 text-center right-12 text-black bg-[#FF9549] rounded-md p-2 md:text-[16px] text-[12px] font-medium md:leading-5 leading-3 rotate-[15deg]">
                     Осталось <br /> 5 автомобилей <br /> по спец цене
                   </div>
@@ -300,27 +328,32 @@ const Tanks = () => {
             </div>
           </div>
           <div className="flex gap-5 items-center overflow-x-hidden">
-            <img
+            <LazyLoadImage 
+              effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray1}
               alt=""
             />
-            <img
+            <LazyLoadImage 
+              effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray2}
               alt=""
             />
-            <img
+            <LazyLoadImage 
+              effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray3}
               alt=""
             />
-            <img
+            <LazyLoadImage 
+              effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray4}
               alt=""
             />
-            <img
+            <LazyLoadImage 
+              effect='blur'
               className="md:max-w-[240px] md:max-h-[200px] max-w-[120px] min-h-[100px]"
               src={Gray5}
               alt=""
